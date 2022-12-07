@@ -1,0 +1,18 @@
+<h1>| Broc's Chat |</h1>
+
+<form [formGroup]="chatForm" (ngSubmit)="onSubmit()">
+    <label>Channel:</label>
+    <input type="text" formControlName="channel">
+    <br>
+    <label>Message:</label>
+    <input type="text" formControlName="message">
+    <br>
+    <label>User:</label>
+    <input type="text" formControlName="user">
+    <br>
+    <input type="submit" [disabled]="!chatForm.valid">
+</form>
+<hr>
+<app-message-item *ngFor="let item of messages" [message]="item"></app-message-item>
+
+
